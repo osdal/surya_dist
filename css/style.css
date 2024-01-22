@@ -261,8 +261,8 @@ h6 {
           align-items: center;
   overflow: auto;
   padding-top: 1.5625rem;
-  -webkit-transition: left 0.05s ease 0s;
-  transition: left 0.05s ease 0s;
+  -webkit-transition: left 0.3s ease 0s;
+  transition: left 0.3s ease 0s;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(4.69%, #110DFC), color-stop(39.88%, #110DFC), color-stop(60.12%, rgba(250, 255, 2, 0.18)), color-stop(99.62%, rgba(241, 243, 117, 0.5)), color-stop(99.97%, rgba(248, 253, 31, 0.03)), color-stop(99.98%, rgba(133, 134, 66, 0)));
   background: linear-gradient(180deg, #110DFC 4.69%, #110DFC 39.88%, rgba(250, 255, 2, 0.18) 60.12%, rgba(241, 243, 117, 0.5) 99.62%, rgba(248, 253, 31, 0.03) 99.97%, rgba(133, 134, 66, 0) 99.98%);
   background: #110DFC;

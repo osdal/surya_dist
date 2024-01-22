@@ -3187,6 +3187,25 @@
             }));
         }));
     }
+    function menuIconHide() {
+        menuItems.forEach((icon => {
+            icon.addEventListener("click", (() => {
+                menuItems.forEach((function(menu) {
+                    if (menu !== icon && !icon.classList.contains("item-menu-clicked")) menu.classList.add("dnone");
+                }));
+            }));
+        }));
+        menuItems.forEach((item => {
+            item.addEventListener("click", (() => {
+                if (!item.classList.contains("icon-menu-clicked")) menuItems.forEach((icon => {
+                    if (icon.classList.contains("dnone")) {
+                        icon.classList.remove("dnone");
+                        console.log(icon);
+                    }
+                }));
+            }));
+        }));
+    }
     function menuCount() {}
     function menuBodyWayUp() {
         mainMenuItems.forEach((menu => {
@@ -3200,14 +3219,18 @@
         menuCount();
         menuClicked();
         menuBodyWayUp();
+        menuIconHide();
         let mobileMenu = document.querySelectorAll(".menu__list>li");
         let subMenu = document.querySelectorAll(".sub-menu");
-        let menuIcon = document.querySelector(".menu__icon");
-        menuIcon.addEventListener("click", (() => {
-            subMenu.forEach((item => {
-                item.style.maxHeight = 0;
+        let menuIcon = document.querySelectorAll(".menu__icon");
+        menuIcon.forEach((icon => {
+            icon.addEventListener("click", (() => {
+                subMenu.forEach((menu => {
+                    menu.style.maxHeight = 0;
+                }));
             }));
         }));
+        addActiveClass(mobileMenu);
         function addActiveClass(menu) {
             menu.forEach((element => {
                 element.addEventListener("click", (function() {
@@ -3225,7 +3248,6 @@
                 }));
             }));
         }
-        addActiveClass(mobileMenu);
         function smoothIncreaseMaxHeight(initialValue, interval, subMenu) {
             let presentValue = initialValue;
             const intervalIdentifier = setInterval((() => {
